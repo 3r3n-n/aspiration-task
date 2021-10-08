@@ -17,9 +17,9 @@ export const fetchTopic = async (topicName) => {
         const result = await ghClient
         .query({
             query: gql`
-                query GetSth01 {
+                query GetTopicData {
                     topic(name: "${topicName}"){
-                        relatedTopics(first: 11) {
+                        relatedTopics(first: 10) {
                             name
                             stargazerCount
                         }

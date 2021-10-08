@@ -42,7 +42,7 @@ const TopicCard = ({ topic, handleClick }) => {
     return (
         <TopicInfo>
             <TopicButton onClick={handleClick}>
-                <TopicName>{topic.name}</TopicName>
+                <TopicName data-testid="topic-name">{topic.name}</TopicName>
             </TopicButton>
             <TopicStargazerLabel>Stargazer Count: </TopicStargazerLabel>
             <TopicStargazerCount>{topic.stargazerCount}</TopicStargazerCount>

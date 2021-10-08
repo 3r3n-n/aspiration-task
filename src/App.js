@@ -1,5 +1,4 @@
-import './App.css';
-import RelatedTopics from './components/RelatedTopics';
+import RelatedTopics from './components/RelatedTopics/RelatedTopics';
 
 function App() {
   return (
