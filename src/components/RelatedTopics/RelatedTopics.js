@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { fetchTopic } from '../api/topicService';
-import TopicCard from './TopicCard';
-import DataError from './DataError';
+import { fetchTopic } from '../../api/topicService';
+import TopicCard from '../TopicCard/TopicCard';
+import DataError from '../DataError/DataError';
 
 const MainContainer = styled.main`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const TopicsContainer = styled.div`
@@ -31,7 +31,7 @@ const RelatedTopics = () => {
         }
         else {
           setRelatedTopics(null);
-          console.log(response);
+          console.error(response);
         }
       };
       fetchData();
@@ -40,30 +40,26 @@ const RelatedTopics = () => {
       console.error(error);
       setRelatedTopics(null);
     }
-    }, [currentTopic]);
-  //console.log(relatedTopics);
-
-    
+  }, [currentTopic]);
 
   return (
     <MainContainer>
       <h1>{currentTopic}</h1>
       <h2>Related Topics: </h2>
       { relatedTopics ?
-      <TopicsContainer>
-      { 
-        relatedTopics.map((topic) => (
-          <TopicCard 
-            key={topic.name} 
-            topic={topic} 
-            handleClick={() => setCurrentTopic(topic.name)} 
-          />
-        ))
-        
-      }
-      </TopicsContainer>
-      :
-      <DataError/>
+        <TopicsContainer>
+          { 
+            relatedTopics.map((topic) => (
+              <TopicCard 
+                key={topic.name} 
+                topic={topic} 
+                handleClick={() => setCurrentTopic(topic.name)} 
+              />
+            ))
+          }
+        </TopicsContainer>
+        :
+        <DataError/>
       }
     </MainContainer>
   );
