@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Related Topics in Github API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a possible solution to the Aspiration FE take home task. 
 
-## Available Scripts
+It is an app that consumes data from the Github GraphQL API through an Apollo client.
 
-In the project directory, you can run:
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open your terminal and clone this repo:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+  git clone https://github.com/3r3n-n/aspiration-task.git
+```
 
-### `npm test`
+Move to the cloned repo:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+  cd aspiration-task
+```
 
-### `npm run build`
+Install the necessary dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running this project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Before trying to run this project, you need to create a .env.local file in the root folder.
 
-### `npm run eject`
+Add the following lines to the ```env.local``` file:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+  REACT_APP_API_KEY = <your_github_access_token>
+  NODE_ENV = development
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Where you see ```<your_github_access_token>``` you need to replace it with your personal github access token. If you don't have one yet, you can learn how to create one [here](https://docs.github.com/es/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Now you can run the project:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  npm start
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Running Tests
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run tests, run the following command
 
-### Code Splitting
+```bash
+  npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Dev Notes
 
-### Analyzing the Bundle Size
+### Relevant packages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This app was built with the ```create-react-app``` package.
 
-### Making a Progressive Web App
+The ```styled-components``` package was installed to apply some styling to the UI.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The ```@apollo/client graphql``` package was installed to have a client to consume data from the Github GraphQL API.
 
-### Advanced Configuration
+The ```@testing-library/react``` and ```@testing-library/jest-dom``` packages were installed to implement unit tests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The ```msw``` package was installed to mock the API request and response in the unit tests.
 
-### Deployment
+### Other tools
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The IDE that was used to build this project is Visual Studio Code.
 
-### `npm run build` fails to minify
+The Github GraphQL Explorer was used in order to determine the syntax for the necessary API query.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future improvements
+
+A unit test that mocks an error response in the API is necessary.
+
+It would be nice to add some design / polish the style in the UI.
